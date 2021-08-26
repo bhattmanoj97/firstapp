@@ -1,7 +1,6 @@
 <?php
 	ini_set('display_errors', 1); 
 	error_reporting(E_ALL);
-	include('lib/shopify_api.php');
 	if (!defined('08b22714d544265d95b679ec26bdbcaf') || !defined('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') || isEmpty(API_KEY) || isEmpty(SECRET)) die('Both constants API_KEY and SECRET must be defined in the config file.');
 		
 	/* GET VARIABLES */
@@ -10,7 +9,7 @@
 	$timestamp = (isset($_GET['timestamp'])) ? mysql_escape_string($_GET['timestamp']) : '';
 	$signature = (isset($_GET['signature'])) ? mysql_escape_string($_GET['signature']) : '';
 	$params = array('timestamp' => $timestamp, 'signature' => $signature);
-	$url = 'example.myshopify.com';
+	$url = 'shopbhatt.myshopify.com';
 	
 	
 	$api = new Session($url, $token, API_KEY, SECRET, true);

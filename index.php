@@ -6,9 +6,10 @@ error_reporting(E_ALL);
 require_once("inc/functions.php");
 
 $requests = $_GET;
-printr($requests)
-$hmac = $_GET['hmac'];
+// $hmac = $_GET['hmac'];
 $serializeArray = serialize($requests);
+printr($serializeArray)
+
 $requests = array_diff_key($requests, array('hmac' => ''));
 ksort($requests);
 

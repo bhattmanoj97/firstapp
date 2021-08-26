@@ -7,12 +7,11 @@ error_reporting(E_ALL);
 require_once("inc/functions.php");
 
 $requests = $_GET;
-$hmac =  $_GET;
-print_r($hmac); die('dd');
+$hmac = $_GET['hmac'];
 $serializeArray = serialize($requests);
-echo $serializeArray;
 
 $requests = array_diff_key($requests, array('hmac' => ''));
+print_r($requests); die('dd');
 ksort($requests);
 
 $token ="e4c17832f092a9041cbba1065e9dacaa";

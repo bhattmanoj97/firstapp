@@ -12,5 +12,5 @@ curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "GET");
 curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
 $response = curl_exec ($shopcurl);
 curl_close ($shopcurl);
- print_r($response.date);
+ print_r($response);
 ?>

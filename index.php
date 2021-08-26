@@ -10,7 +10,7 @@ $requests = $_GET;
 // $hmac = $_GET['hmac'];
 $serializeArray = serialize($requests);
 
-$requests = array_diff_key($requests, array($hmac => ''));
+$requests = array_diff_key($requests, array(serializeArray => ''));
 print_r($requests); die('dd');
 ksort($requests);
 

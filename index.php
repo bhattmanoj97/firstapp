@@ -8,7 +8,7 @@ require_once("inc/functions.php");
 
 $requests = $_GET;
 $hmac =  $_GET;
-print_r($hmac);
+print_r($hmac); die('dd');
 $serializeArray = serialize($requests);
 echo $serializeArray;
 

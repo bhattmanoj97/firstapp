@@ -1,5 +1,4 @@
 <?php
-echo "yesss";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -7,6 +6,7 @@ error_reporting(E_ALL);
 require_once("inc/functions.php");
 
 $requests = $_GET;
+printr($requests)
 $hmac = $_GET['hmac'];
 $serializeArray = serialize($requests);
 $requests = array_diff_key($requests, array('hmac' => ''));

@@ -1,10 +1,18 @@
 <?php
-$shop_domain = 'https://shopbhatt.myshopify.com';
-$token = 'e4c17832f092a9041cbba1065e9dacaa';
-$key = '08b22714d544265d95b679ec26bdbcaf';
-$secret = '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';
-
-$client = new ShopifyClient($shop_domain, $token, $api_key, $secret);
-
-print_r($client);
+ 
+$url = "https://08b22714d544265d95b679ec26bdbcaf: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@shopbhatt.myshopify.com/admin/api/2021-07/products.json";
+ 
+$shopcurl = curl_init();
+curl_setopt($shopcurl, CURLOPT_URL, $url);
+curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
+curl_setopt($shopcurl, CURLOPT_HEADER, 1);
+curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "GET");
+curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
+$response = curl_exec ($shopcurl);
+curl_close ($shopcurl);
+echo "<pre>";
+print_r($response);
+ 
 ?>

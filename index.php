@@ -12,7 +12,6 @@ curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "GET");
 curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
 $response = curl_exec ($shopcurl);
 curl_close ($shopcurl);
-echo "<pre>";
 print_r($response);
  
 ?>

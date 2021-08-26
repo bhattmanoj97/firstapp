@@ -7,7 +7,8 @@ error_reporting(E_ALL);
 require_once("inc/functions.php");
 
 $requests = $_GET;
-$hmac = $_GET['hmac'];
+$hmac =  $_GET;
+print_r($hmac);
 $serializeArray = serialize($requests);
 echo $serializeArray;
 

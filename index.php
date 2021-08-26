@@ -7,10 +7,10 @@ error_reporting(E_ALL);
 require_once("inc/functions.php");
 
 $requests = $_GET;
-// $hmac = $_GET['hmac'];
+ $hmac = $_GET['hmac'];
 $serializeArray = serialize($requests);
 
-$requests = array_diff_key($requests, array(serializeArray => ''));
+$requests = array_diff_key($requests, array('hmac' => ''));
 print_r($requests); die('dd');
 ksort($requests);
 

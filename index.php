@@ -13,6 +13,6 @@ curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
 $response = curl_exec ($shopcurl);
 curl_close ($shopcurl);
 echo "<pre>";
-print_r($response.products);
+print_r($response);
  
 ?>

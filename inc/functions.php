@@ -4,6 +4,7 @@ function shopify_call($token, $shop, $api_endpoint, $query = array(), $method = 
     
 	// Build URL
 	$url = "https://" . $shop . ".myshopify.com" . $api_endpoint;
+	print_r($url); die('ggg');
 	if (!is_null($query) && in_array($method, array('GET', 	'DELETE'))) $url = $url . "?" . http_build_query($query);
 
 	// Configure cURL

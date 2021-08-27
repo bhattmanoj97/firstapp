@@ -4,7 +4,7 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);   
 curl_setopt($ch, CURLOPT_URL, $url);   
 $res = curl_exec($ch);      
-<tr> 
- <td> $res;</td>
+<tr><?php echo $i; ?></td>
+					<td><?php echo $row["id"]; ?></td>
 </tr>
 ?>  

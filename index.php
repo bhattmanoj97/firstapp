@@ -5,6 +5,6 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_URL, $url);   
 $res = curl_exec($ch);    
 echo $res;  */
-require_once("install.php");
+//require_once("install.php");
 echo "hello World";
  ?>  

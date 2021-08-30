@@ -5,7 +5,7 @@ require_once("inc/functions.php");
 
 // Set variables for our request
 $shop = "demo-shop";
-$token = "SWplI7gKAckAlF9QfAvv9yrI3grYsSkw";
+$token = "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";
 $query = array(
 	"Content-type" => "application/json" // Tell Shopify that we're expecting a response in JSON format
 );

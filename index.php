@@ -17,5 +17,5 @@ $collection_id = $collectionList['custom_collections'][0]['id'];
 $array = array("collection_id"=>$collection_id);
 $collects = shopify_call($token, $shop, "/admin/api/2020-07/products.json", $array, 'GET');
 $collects = json_decode($collects['response'], JSON_PRETTY_PRINT);
-print_r($collects[id]);
+print_r($collects[products]);
 ?>

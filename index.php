@@ -6,7 +6,7 @@ $hmac = $_GET['hmac'];
 $serializeArray = serialize($requests);
 $requests = array_diff_key($requests, array('hmac' => ''));
 ksort($requests);
-echo $shop;
+// echo $shop;
 $token = "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";
 $shop = "shopbhatt";
 

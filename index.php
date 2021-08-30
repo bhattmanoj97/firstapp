@@ -1,10 +1,11 @@
-<?php   
-/*$url = "https://08b22714d544265d95b679ec26bdbcaf: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@shopbhatt.myshopify.com/admin/api/2021-07/products.json";
-$ch = curl_init();   
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);   
-curl_setopt($ch, CURLOPT_URL, $url);   
-$res = curl_exec($ch);    
-echo $res;  */
-//require_once("install.php");
-echo "hello World";
- ?>  
+<?php
+require_once("inc/functions.php");
+
+$requests = $_GET;
+$hmac = $_GET['hmac'];
+$serializeArray = serialize($requests);
+$requests = array_diff_key($requests, array('hmac' => ''));
+ksort($requests);
+echo $shop;
+
+?>

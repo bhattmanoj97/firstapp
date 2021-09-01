@@ -58,16 +58,16 @@ $variants = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['p
 $variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
 $originalPrice = $variants['variants'][0]['compare_at_price'];
 $discountedPrice = $variants['variants'][0]['price'];
-// echo $products['product']['title'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
+ echo $products['product']['image'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
 
-////////////images//////////////
+//////////images//////////////
 
-$products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
-$products = json_decode($products['response'], JSON_PRETTY_PRINT);
-$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
-$images = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $images['images'][0]['src'];
-echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
+// $products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
+// $products = json_decode($products['response'], JSON_PRETTY_PRINT);
+// $images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
+// $images = json_decode($images['response'], JSON_PRETTY_PRINT);
+// $item_default_image = $images['images'][0]['src'];
+// echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 
 ?>
 

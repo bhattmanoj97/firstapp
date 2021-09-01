@@ -70,7 +70,7 @@ $item_default_image = $images['images'][0]['src'];
 // echo '<img src="'.$value['src'].'" />';
 // }
 // echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
-}
+//}
 
 ?>
 

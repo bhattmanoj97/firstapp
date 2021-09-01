@@ -36,7 +36,7 @@ foreach($collects as $collect){
 		$products = json_decode($products['response'], JSON_PRETTY_PRINT); ?>
          <tr>
 	  <td> <?php echo $products['product']['id']; ?>    </td>
-	  <td> <?php echo $products['product']['title']; ?> <br></td>
+	  <td> <?php echo $products['product']['title']; ?> </td>
           </tr>
 
     <?php }

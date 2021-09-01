@@ -27,13 +27,14 @@ $collects = json_decode($collects['response'], JSON_PRETTY_PRINT);
 foreach($collects as $collect){
     foreach($collect as $key => $value){
     	$products = shopify_call($token, $shop, "/admin/api/2019-07/products/".$value['product_id'].".json", array(), 'GET');
-		$products = json_decode($products['response'], JSON_PRETTY_PRINT);
-                <table> 
-                <tr>
-               <td> echo $products['product']['title'];</td>
-                     <tr>
-                    </table>
+		$products = json_decode($products['response'], JSON_PRETTY_PRINT); ?>
+               <?php echo "<table>"; 
+		   echo "<tr> \n";
+		   echo "<td> $products['product']['title'];</td> \n";
+	  	    echo "</tr>";
+                    echo "</table>";
     }
 }
+
 
 ?>

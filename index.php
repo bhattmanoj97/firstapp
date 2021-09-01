@@ -50,7 +50,7 @@ tr:nth-child(even) {
           <th>Product Vendor </th>
 	 </tr>
 <?php
-var $id = 1;
+var $id = "1";
 foreach($collects as $collect){
 foreach($collect as $key => $value){
 $products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');

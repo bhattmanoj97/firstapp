@@ -56,7 +56,7 @@ foreach($collects as $collect){
          <tr>
 	  <td> <?php echo $products['product']['id'];    ?> </td>
 	  <td> <?php echo $products['product']['title']; ?> </td>
-          <td> <?php echo $products['product']['price']; ?> </td>
+          <td> <?php echo $products['product']['variants.price']; ?> </td>
           <td> <?php echo $products['product']['vendor']; ?> </td>
           </tr>
 

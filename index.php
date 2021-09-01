@@ -32,8 +32,8 @@ foreach($collects as $collect){
 		   echo "<tr> \n";
 		   echo "<td> $products['product']['title'];</td> \n";
 	  	    echo "</tr>";
-                    echo "</table>";
-    }
+                    echo "</table>"; ?>
+    <?php }
 }
 
 

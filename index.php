@@ -58,8 +58,14 @@ $variants = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['p
 $variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
 $originalPrice = $variants['variants'][0]['compare_at_price'];
 $discountedPrice = $variants['variants'][0]['price'];
-$images_product =  $products['image']['src'];
+//images
+
+$images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
+$images = json_decode($images['response'], JSON_PRETTY_PRINT);
+$item_default_image = $images['images'][0]['src'];
+$images_product =  $image['src'];
 echo $images_product;
+print_r($images_product);
 // echo $products['product']['price'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
 ?>
 

@@ -44,6 +44,7 @@ tr:nth-child(even) {
 	<tr>
 	  <th>S.no </th>
 	  <th>Product Id </th>
+          <th>Image</th>
 	  <th>Product Title </th>
           <th>Price </th>
           <th>Compare Price </th>
@@ -63,15 +64,13 @@ $discountedPrice = $variants['variants'][0]['price'];
 $images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
-$images_product =  $image['src'];
 //print_r($item_default_image);
 // echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 ?>
-
          <tr>
           <td> <?php echo $key ?> </td>
           <td> <?php echo $products['product']['id'];    ?> </td>
-          <td> <?Php echo '<img src="'.$item_default_image.'" style="width: 20px; height: 20px;"/>'; ?>
+          <td> <?Php echo '<img src="'.$item_default_image.'" style="width:50px; height:50px;"/>'; ?>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $discountedPrice ?> </td>
           <td> <?php echo $originalPrice ?> </td>

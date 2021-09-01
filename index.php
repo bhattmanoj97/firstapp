@@ -56,17 +56,9 @@ $variants = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['p
 $variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
 $originalPrice = $variants['variants'][0]['compare_at_price'];
 $discountedPrice = $variants['variants'][0]['price'];
-         <tr>
-	  <td> <?php echo $products['product']['id'];    ?> </td>
-	  <td> <?php echo $products['product']['title']; ?> </td>
-          <td> <?php echo $discountedPrice ?> </td>
-          <td> <?php echo $products['product']['vendor']; ?> </td>
-          </tr>
+echo $products['product']['title'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
+}
+} 
 
-    <?php }
-} ?>
-</table>
-
-<?php 
 
 ?>

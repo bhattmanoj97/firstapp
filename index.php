@@ -29,17 +29,18 @@ $collects = json_decode($collects['response'], JSON_PRETTY_PRINT); ?>
 	  <th>Product Id </th>
 	  <th>Product Title </th>
 	 </tr>
-<tr>
 <?php
 foreach($collects as $collect){
     foreach($collect as $key => $value){
     	$products = shopify_call($token, $shop, "/admin/api/2019-07/products/".$value['product_id'].".json", array(), 'GET');
 		$products = json_decode($products['response'], JSON_PRETTY_PRINT); ?>
+         <tr>
 	  <td> <?php echo $products['product']['id']; ?>    </td>
 	  <td> <?php echo $products['product']['title']; ?> <br></td>
+          </tr>
+
     <?php }
 } ?>
-</tr>
 </table>
 
 <?php 

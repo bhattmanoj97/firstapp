@@ -59,6 +59,9 @@ $variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
 $originalPrice = $variants['variants'][0]['compare_at_price'];
 $discountedPrice = $variants['variants'][0]['price'];
 // echo $products['product']['title'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
+		$item_default_image = $images['images'][0]['src'];
+		echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
+
 ?>
 
          <tr>

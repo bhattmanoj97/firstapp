@@ -65,13 +65,13 @@ $images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
 
-
-// echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
-}
 foreach($images['images'] as $image){
 foreach($image as $key => $value){
 echo '<img src="'.$value['src'].'" />';
 }
+// echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
+}
+
 ?>
 
          <tr>

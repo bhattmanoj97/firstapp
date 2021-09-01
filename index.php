@@ -63,8 +63,8 @@ $discountedPrice = $variants['variants'][0]['price'];
          <tr>
           <td> <?php echo $products['product']['id'];    ?> </td>
           <td> <?php echo $products['product']['title']; ?> </td>
-          <td> <?php echo $originalPrice ?> </td>
           <td> <?php echo $discountedPrice ?> </td>
+          <td> <?php echo $originalPrice ?> </td>
           <td> <?php echo $products['product']['vendor']; ?> </td>
           </tr>
 

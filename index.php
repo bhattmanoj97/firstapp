@@ -49,11 +49,13 @@ tr:nth-child(even) {
 	 </tr>
 <?php
 foreach($collects as $collect){
-    foreach($collect as $key => $value){
-    	$products = shopify_call($token, $shop, "/admin/api/2019-07/products/".$value['product_id'].".json", array(), 'GET');
-		$products = json_decode($products['response'], JSON_PRETTY_PRINT); ?>
-                $discountedPrice = $variants['variants'][0]['price'];
-                print_r($discountedPrice);
+foreach($collect as $key => $value){
+$products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
+$products = json_decode($products['response'], JSON_PRETTY_PRINT);
+$variants = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id']."/variants.json", array(), 'GET');
+$variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
+$originalPrice = $variants['variants'][0]['compare_at_price'];
+$discountedPrice = $variants['variants'][0]['price'];
          <tr>
 	  <td> <?php echo $products['product']['id'];    ?> </td>
 	  <td> <?php echo $products['product']['title']; ?> </td>

@@ -67,11 +67,10 @@ $item_default_image = $images['images'][0]['src'];
 
 
 // echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
-
+}
 foreach($images['images'] as $image){
 foreach($image as $key => $value){
 echo '<img src="'.$value['src'].'" />';
-}
 }
 ?>
 

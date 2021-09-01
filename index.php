@@ -59,7 +59,7 @@ $variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
 $originalPrice = $variants['variants'][0]['compare_at_price'];
 $discountedPrice = $variants['variants'][0]['price'];
 $images_product =  $variants['variants'][0]['image'];
-print_r($images_product);
+//print_r($images_product);
 // echo $products['product']['price'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
 
 //////////images//////////////
@@ -87,4 +87,15 @@ echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>'
 
 
 <?php
+foreach($collects as $collect){
+foreach($collect as $key => $value){
+$products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
+print_r($products);
+$products = json_decode($products['response'], JSON_PRETTY_PRINT);
+$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
+$images = json_decode($images['response'], JSON_PRETTY_PRINT);
+$item_default_image = $images['images'][0]['src'];
+echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
+}
+}
 ?>

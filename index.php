@@ -63,6 +63,7 @@ $discountedPrice = $variants['variants'][0]['price'];
 ////////////images//////////////
 
 $products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
+$products = json_decode($products['response'], JSON_PRETTY_PRINT);
 $images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];

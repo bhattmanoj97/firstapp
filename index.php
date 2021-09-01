@@ -66,11 +66,12 @@ $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
 // echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 
-if($item_default_image == null){
-echo $item_default_image
-}else{
-echo "no image";
-}
+print_r($images);
+// if($images == null){
+// echo $item_default_image
+// }else{
+// echo "no image";
+// }
 ?>
 
          <tr>

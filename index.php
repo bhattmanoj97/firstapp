@@ -65,8 +65,7 @@ $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
 $images_product =  $image['src'];
 print_r($item_default_image);
-print_r($images);
-// echo $products['product']['price'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
+echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 ?>
 
          <tr>

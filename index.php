@@ -45,6 +45,7 @@ tr:nth-child(even) {
 	  <th>Product Id </th>
 	  <th>Product Title </th>
           <th>Price </th>
+          <th>Compare Price </th>
           <th>Product Vendor </th>
 	 </tr>
 <?php
@@ -56,9 +57,21 @@ $variants = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['p
 $variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
 $originalPrice = $variants['variants'][0]['compare_at_price'];
 $discountedPrice = $variants['variants'][0]['price'];
-echo $products['product']['title'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
-}
-} 
+// echo $products['product']['title'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
+?>
+
+         <tr>
+          <td> <?php echo $products['product']['id'];    ?> </td>
+          <td> <?php echo $products['product']['title']; ?> </td>
+          <td> <?php echo $originalPrice ?> </td>
+          <td> <?php echo $discountedPrice ?> </td>
+          <td> <?php echo $products['product']['vendor']; ?> </td>
+          </tr>
+
+    <?php }
+} ?>
+</table>
 
 
+<?php
 ?>

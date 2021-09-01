@@ -64,7 +64,7 @@ $images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
 $images_product =  $image['src'];
-echo $images_product;
+print_r($item_default_image);
 print_r($images);
 // echo $products['product']['price'] . " | Now at $" . $discountedPrice . " | Before: <del>$" . $originalPrice . "</del><br />";
 ?>

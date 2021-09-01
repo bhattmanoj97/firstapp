@@ -44,6 +44,8 @@ tr:nth-child(even) {
 	<tr>
 	  <th>Product Id </th>
 	  <th>Product Title </th>
+          <th>Price </th>
+          <th>Product Vendor </th>
 	 </tr>
 <?php
 foreach($collects as $collect){
@@ -53,6 +55,8 @@ foreach($collects as $collect){
          <tr>
 	  <td> <?php echo $products['product']['id']; ?>    </td>
 	  <td> <?php echo $products['product']['title']; ?> </td>
+          <td> <?php echo $products['product']['price']; ?> </td>
+          <td> <?php echo $products['product']['vendor']; ?> </td>
           </tr>
 
     <?php }

@@ -85,17 +85,5 @@ echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>'
 } ?>
 </table>
 
-
 <?php
-foreach($collects as $collect){
-foreach($collect as $key => $value){
-$products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
-print_r($collection_id);
-$products = json_decode($products['response'], JSON_PRETTY_PRINT);
-$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
-$images = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $images['images'][0]['src'];
-echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
-}
-}
 ?>

@@ -68,7 +68,7 @@ $products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['c
 $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 $images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $images['images'][0]['src'];
+$item_default_image = $images['image']['src'];
 echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 ?>
 

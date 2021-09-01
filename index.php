@@ -63,10 +63,10 @@ $discountedPrice = $variants['variants'][0]['price'];
 //images
 $images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $images['images'][0]['src'];
+$item_default_image = $images['images'][$key]['src'];
 // echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 
-print_r($images);
+print_r($item_default_image);
 // if($images == null){
 // echo $item_default_image
 // }else{

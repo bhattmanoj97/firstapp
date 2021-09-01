@@ -64,13 +64,14 @@ $images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
 $images_product =  $image['src'];
-print_r($item_default_image);
-echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
+//print_r($item_default_image);
+// echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 ?>
 
          <tr>
           <td> <?php echo $key ?> </td>
           <td> <?php echo $products['product']['id'];    ?> </td>
+          <td> <?Php echo '<img src="'.$item_default_image.'" style="width: 20px; height: 20px;"/>'; ?>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $discountedPrice ?> </td>
           <td> <?php echo $originalPrice ?> </td>

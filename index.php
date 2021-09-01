@@ -64,7 +64,7 @@ echo $id++;
 ?>
 
          <tr>
-          <td> <?php echo $id++ ?> </td>
+          <td> <?php echo $id ?> </td>
           <td> <?php echo $products['product']['id'];    ?> </td>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $discountedPrice ?> </td>

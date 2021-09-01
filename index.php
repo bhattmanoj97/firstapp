@@ -42,6 +42,7 @@ tr:nth-child(even) {
 </style>
 <table>
 	<tr>
+	  <th>S.no </th>
 	  <th>Product Id </th>
 	  <th>Product Title </th>
           <th>Price </th>
@@ -49,6 +50,7 @@ tr:nth-child(even) {
           <th>Product Vendor </th>
 	 </tr>
 <?php
+var $id = 1;
 foreach($collects as $collect){
 foreach($collect as $key => $value){
 $products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
@@ -61,6 +63,7 @@ $discountedPrice = $variants['variants'][0]['price'];
 ?>
 
          <tr>
+          <td> <?php echo $id++ ?> </td>
           <td> <?php echo $products['product']['id'];    ?> </td>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $discountedPrice ?> </td>

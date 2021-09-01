@@ -63,16 +63,11 @@ $discountedPrice = $variants['variants'][0]['price'];
 //images
 $images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $images['images'][0]['src'];
 
 $index = 0;
-foreach($images['images'] as $image){
-foreach($image as $key => $value){
-if($index == 4) return;
-$index++;
-echo '<img src="'.$value['src'].'" />';
-}
-}
+$item_default_image = $images['images'][$index++]['src'];
+
+echo $item_default_image;
 
 ?>
 

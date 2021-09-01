@@ -17,7 +17,7 @@ $shop = "shopbhatt";
 // $array = array("collection_id"=>$collection_id);
 // $collects = shopify_call($token, $shop, "/admin/api/2020-07/products.json", $array, 'GET');
 // $collects = json_decode($collects['response'], JSON_PRETTY_PRINT);
-// print_r($collects);
+// print_r($collects); 
 
 $collection_id = 276995047597;
 $array = array("collection_id"=>$collection_id);
@@ -64,13 +64,12 @@ print_r($images_product);
 
 //////////images//////////////
 
-// $products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
-// $products = json_decode($products['response'], JSON_PRETTY_PRINT);
-// $images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
-// $images = json_decode($images['response'], JSON_PRETTY_PRINT);
-// $item_default_image = $images['images'][0]['src'];
-// echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
-
+$products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
+$products = json_decode($products['response'], JSON_PRETTY_PRINT);
+$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
+$images = json_decode($images['response'], JSON_PRETTY_PRINT);
+$item_default_image = $images['images'][0]['src'];
+echo '<img src="'.$item_default_image.'" style="width: 200px; height: 230px;"/>';
 ?>
 
          <tr>

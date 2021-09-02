@@ -44,7 +44,7 @@ tr:nth-child(even) {
 	<tr>
 	  <th>S.no </th>
 	  <th>Product Id </th>
-<!--           <th>Image</th> -->
+          <th>Image</th>
 	  <th>Product Title </th>
           <th>Price </th>
           <th>Compare Price </th>

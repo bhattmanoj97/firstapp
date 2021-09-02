@@ -60,7 +60,7 @@ $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 //$images = json_decode($images['response'], JSON_PRETTY_PRINT);
 
  $item_default_image = $products['images'][0]['src'];
-	print_r($item_default_image);
+	print_r($products);
 ?>
 
          <tr>

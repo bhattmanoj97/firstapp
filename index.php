@@ -3,7 +3,7 @@ require_once("inc/functions.php");
 
 $requests = $_GET;
 $hmac = $_GET['hmac'];
-$serializeArray = serialize($requests);
+$serializeArray = serialize($requests); 
 $requests = array_diff_key($requests, array('hmac' => ''));
 ksort($requests);
 // echo $shop;
@@ -53,14 +53,16 @@ tr:nth-child(even) {
 	
 foreach($collects as $collect){
 foreach($collect as $key => $value){
-$products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
-$products = json_decode($products['response'], JSON_PRETTY_PRINT);
+// $products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
+// $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 
 //images
-$images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
-$images1 = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $products['images'][0]['src'];
-print_r($images1);
+$products = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['collection_id'].".json", array(), 'GET');
+$products = json_decode($products['response'], JSON_PRETTY_PRINT);
+$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
+$images = json_decode($images['response'], JSON_PRETTY_PRINT);
+$item_default_image = $images['images'][0]['src'];
+print_r($item_default_image);
 ?>
 
          <tr>

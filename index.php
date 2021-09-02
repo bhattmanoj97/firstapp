@@ -22,7 +22,7 @@ $collection_id = 276995047597;
 $array = array("collection_id"=>$collection_id);
 $collects = shopify_call($token, $shop, "/admin/api/2020-07/collects.json", $array, 'GET');
 $collects = json_decode($collects['response'], JSON_PRETTY_PRINT); ?>
-<style>
+<style> 
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -57,10 +57,10 @@ $products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['p
 $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 
 //images
-$images111 = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
+$images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $products['images'][0]['src'];
-print_r($images);
+$item_default_image = $products['images'][$key]['src'];
+print_r($item_default_image);
 ?>
 
          <tr>

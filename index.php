@@ -54,8 +54,7 @@ tr:nth-child(even) {
 	
 foreach($collects as $collect){
 foreach($collect as $key => $value){
-	print_r($value);
-$products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_handle'].".json", array(), 'GET');
+$products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
 $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 //images
 //$images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');

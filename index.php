@@ -55,22 +55,17 @@ foreach($collects as $collect){
 foreach($collect as $key => $value){
 $products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
 $products = json_decode($products['response'], JSON_PRETTY_PRINT);
-//$variants = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id']."/variants.json", array(), 'GET');
-//$variants = json_decode($variants['response'], JSON_PRETTY_PRINT);
-//$originalPrice = $variants['variants'][0]['compare_at_price'];
-//$discountedPrice = $variants['variants'][0]['price'];
-	
 //images
 //$images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
 //$images = json_decode($images['response'], JSON_PRETTY_PRINT);
 
-// $item_default_image = $images['images'][0]['src'];
+ $item_default_image = $products['images'][0]['src'];
 ?>
 
          <tr>
           <td> <?php echo $key ?> </td>
           <td> <?php echo $products['product']['id'];    ?> </td>
-<!--           <td> <?php echo '<img src="'.$item_default_image.'" style="width:50px; height:50px;"/>'; ?></td> -->
+          <td> <?php echo '<img src="'.$item_default_image.'" style="width:50px; height:50px;"/>'; ?></td>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $discountedPrice ?> </td>
           <td> <?php echo $originalPrice ?> </td>
@@ -81,5 +76,5 @@ $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 } ?>
 </table>
 
-<?php
+<?php 
 ?>

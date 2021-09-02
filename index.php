@@ -57,10 +57,10 @@ $products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['p
 $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 
 //images
-$images = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
+$images111 = shopify_call($token, $shop, "/admin/api/2020-10/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $products['images'][0]['src'];
-print_r($products['images'][0]);
+print_r($images111);
 ?>
 
          <tr>

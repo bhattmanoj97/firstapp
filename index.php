@@ -9,7 +9,7 @@ ksort($requests);
 // echo $shop;
 $token = "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";
 $shop = "shopbhatt";
-
+ 
 // $collectionList = shopify_call($token, $shop, "/admin/api/2020-07/custom_collections.json", array(), 'GET');
 // $collectionList = json_decode($collectionList['response'], JSON_PRETTY_PRINT);
 // $collection_id = $collectionList['custom_collections'][0]['id'];
@@ -55,6 +55,7 @@ foreach($collects as $collect){
 foreach($collect as $key => $value){
 $products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
 $products = json_decode($products['response'], JSON_PRETTY_PRINT);
+print_r($products);
 
 //images
 //$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['product']['id']."/images.json", array(), 'GET');

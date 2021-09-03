@@ -71,7 +71,7 @@ $item_default_image = $images['images'][0]['src'];
          <tr>
           <td> <?php echo $key ?> </td>
           <td> <?php echo $products['product']['id'];    ?> </td>
-          <td>  <a href="<?php echo $storeURL.'/products/'.$products['product']['handle'] ?> <?php echo  <img src="'.$item_default_image.'" style="width: 50px; height: 50px;"/> ?> "> </td>
+          <td> <?php echo  <img src="'.$item_default_image.'" style="width: 50px; height: 50px;"/> ?> </td>
 		   
 <!--       <a href="'.$storeURL.'/products/'.$products['product']['handle'].'" target="_blank"> -->
           <td> <?php echo $products['product']['title']; ?> </td>

@@ -69,7 +69,6 @@ print_r($item_default_image);
         <tr>
           <td> <?php echo $key ?> </td>
           <td> <?php echo $products['product']['id']; ?> </td>
-          <td> <?php echo   ?> </td>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $products['product']['variants'][0]['price']; ?> </td>
           <td> <?php echo $originalPrice ?> </td>

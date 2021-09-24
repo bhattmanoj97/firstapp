@@ -50,39 +50,5 @@ tr:nth-child(even) {
           <th>Product Vendor </th>
 	 </tr>
 <?php
-	
-foreach($collects as $collect){
-foreach($collect as $key => $value){
-$products = shopify_call($token, $shop, "/admin/api/2020-10/products/".$value['product_id'].".json", array(), 'GET');
-$products = json_decode($products['response'], JSON_PRETTY_PRINT);
-print_r($products);
 
-//images
-//$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['product']['id']."/images.json", array(), 'GET');
-// print_r($images);
-$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
-$images = json_decode($images['response'], JSON_PRETTY_PRINT);
-$item_default_image = $images['images'][0]['src'];
-//print_r($item_default_image);
-
-
-?>
-
-         <tr>
-          <td> <?php echo $key ?> </td>
-          <td> <?php echo $products['product']['id'];    ?> </td>
-          <td> <?php echo  <img src="'.$item_default_image.'" style="width: 50px; height: 50px;"/> ?> </td>
-		   
-<!--       <a href="'.$storeURL.'/products/'.$products['product']['handle'].'" target="_blank"> -->
-          <td> <?php echo $products['product']['title']; ?> </td>
-          <td> <?php echo $products['product']['variants'][0]['price']; ?> </td>
-          <td> <?php echo $originalPrice ?> </td>
-          <td> <?php echo $products['product']['vendor']; ?> </td>
-          </tr>
- 
-    <?php }
-} ?>
-</table>
-
-<?php 
 ?>

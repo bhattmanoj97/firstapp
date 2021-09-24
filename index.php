@@ -63,12 +63,13 @@ $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 $images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
-print_r($item_default_image);
+echo $item_default_image;
 ?>
 
         <tr>
           <td> <?php echo $key ?> </td>
           <td> <?php echo $products['product']['id']; ?> </td>
+          <td><?php echo  ?> </td>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $products['product']['variants'][0]['price']; ?> </td>
           <td> <?php echo $originalPrice ?> </td>

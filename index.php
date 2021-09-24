@@ -69,7 +69,7 @@ $item_default_image = $images['images'][0]['src'];
         <tr>
           <td> <?php echo $key ?> </td>
           <td> <?php echo $products['product']['id']; ?> </td>
-
+          <td> <?php echo  <img src="'.$item_default_image.'" style="width: 50px; height: 50px;"/> ?> </td>
           <td> <?php echo $products['product']['title']; ?> </td>
           <td> <?php echo $products['product']['variants'][0]['price']; ?> </td>
           <td> <?php echo $originalPrice ?> </td>

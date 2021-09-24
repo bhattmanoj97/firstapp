@@ -58,8 +58,8 @@ $products = json_decode($products['response'], JSON_PRETTY_PRINT);
 //print_r($products);
 
 //images
-// $images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['product']['id']."/images.json", array(), 'GET');
-// print_r($images);
+$images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$value['product']['id']."/images.json", array(), 'GET');
+print_r($images);
 $images = shopify_call($token, $shop, "/admin/api/2020-01/products/".$products['product']['id']."/images.json", array(), 'GET');
 $images = json_decode($images['response'], JSON_PRETTY_PRINT);
 $item_default_image = $images['images'][0]['src'];
